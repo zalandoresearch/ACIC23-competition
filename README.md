@@ -35,7 +35,7 @@ In short:
   estimation
 - Task is to make 30 predictions per unit: five steps, with outcomes under six
   different treatments. Loss is MSE over the units x 30 predictions.
-- Data (simulated) found under `/data` directory
+- Data (simulated) found here, in this repository
 - Competition runs March and April 2023. Results released at [ACIC
   2023](https://sci-info.org/annual-meeting/)
 - Submissions [here](https://docs.google.com/forms/d/11RA7-n8MwBu4wSkoMXTkZ5XLvslOOHnvqnEXPCNgEjk/edit#settings)
