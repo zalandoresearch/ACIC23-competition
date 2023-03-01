@@ -87,7 +87,6 @@ Some details about the data
 - We don't have overlap 
 - There are no spillovers across units, or direct spillovers over time
 - Consistency is satisfied 
-- Have to predict covariates
 
 You have enough information to satisfy conditional ignorability. But due to
 dynamics in the system, non linearities and the fact that it's a forecasting
@@ -99,9 +98,6 @@ of the forecasting game. However, we do satsify SUTVA: one unit's treatment
 only affects that treatment. Also, the treatment in a context has a single,
 specific effect. A treatment at time $t$ only has a indirect affect on
 outcomes at any time $j \neq t$.
-
-Last, we don't provide predictions for covariates during the prediction
-window. Of course, they would help you, but that's not what we're after :) 
 
 Note: We've made effort to ensure that the data is free of bugs. This is a
 simulated data of a dynamic system. Though you may still find bugs. If you
