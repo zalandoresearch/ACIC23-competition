@@ -72,7 +72,7 @@ processes.
 
 ## Get the data
 
-It's [here](), in the `data/` directory
+You'll find this above, `training_sample.csv`
 
 ## Some details about the data
 
@@ -127,22 +127,20 @@ ground truth outcome and $\hat{y}$ the predicted outcome, the estimand is
 
 ## Submission
 
-Submissions are of the form
+Submissions have the following columns
 
-| Unit ID | Time step | Treatment 1       | ...   | Treatment 6       |
-| :---    | :---:     | :---:             | :---: | :---:             |
-| A       | 1         | Outcome(1)_{A, 1} | ...   | Outcome(6)_{A, 1} |
-| A       | 2         | Outcome(1)_{A, 2} | ...   | Outcome(6)_{A, 2} |
-| ...     | ...       | ...               | ...   | ...               |
-| A       | 5         | Outcome(1)_{A, 5} | ...   | Outcome(6)_{A, 5} |
-| B       | 1         | Outcome(1)_{B, 1} | ...   | Outcome(6)_{B, 1} |
-| ...     | ...       | ...               | ...   | ...               |
-| ...     | ...       | ...               | ...   | ...               |
+  - 0.0      # outcome under treatment = 0.0
+  - 0.1      # outcome under treatment = 0.1
+  - 0.2      # outcome under treatment = 0.2
+  - 0.3      # outcome under treatment = 0.3
+  - 0.4      # outcome under treatment = 0.4
+  - 0.5      # outcome under treatment = 0.5
+  - unitID   # unit ID
+  - step     # step number for prediction {1, 2, .., 5}
 
+You can find an example in `predictions.csv`
 
-You can find an example in the directory `/data/submission`
-
-Please submit your entry [here]()
+Please submit your entry [here](https://forms.gle/sNi7d8wSUSB5zedW8)
 
 ## Dates
 
@@ -153,7 +151,7 @@ Please submit your entry [here]()
 ## Contact
 
 Please use this [this
-form](https://docs.google.com/forms/d/15FzblvNRigrz0NDbprtbJbdpNj5qpZg6AsZhJcPlgqI/edit),
+form](https://forms.gle/EAgkSoqruZAS1WDT6),
 or open an issue in this repository.
 
 ## License
