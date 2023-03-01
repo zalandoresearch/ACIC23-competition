@@ -6,8 +6,8 @@
 * [Why we made this competition](#why-we-made-this-competition)
 * [Get the Data](#get-the-data)
 * [Some details about the data](#some-details-about-the-data)
-* [Estimand](#esitmand)
-* [Submissions](#submissions)
+* [Estimand](#estimand)
+* [Submission](#submission)
 * [Dates](#dates)
 * [Contact](#contact)
 * [License](#license)
@@ -29,6 +29,8 @@ counterfactual estimation.
 We welcome your participation and contributions to this exciting competition
 and look forward to advancing the field together.  
 
+In short:
+
 - We want to understand the trade off between forecasting and counterfactual
   estimation
 - Task is to make 30 predictions per unit: five steps, with outcomes under six
@@ -36,16 +38,15 @@ and look forward to advancing the field together.
 - Data (simulated) found under `/data` directory
 - Competition runs March and April 2023. Results released at [ACIC
   2023](https://sci-info.org/annual-meeting/)
-- Submissions here
+- Submissions [here](https://docs.google.com/forms/d/11RA7-n8MwBu4wSkoMXTkZ5XLvslOOHnvqnEXPCNgEjk/edit#settings)
 - Enjoy :)
 
 ## Why we made this competition
 
-We are excited to announce the ACIC23 competition, focused on addressing a
-critical challenge in industry. Decision-makers – often algorithmic – rely on
-forecasts of outcomes under different interventions to inform their choices.
-For example, they want to choose prices for items based on outcomes under
-different prices.
+This challenge helps address a critical challenge in industry.
+Decision-makers – often algorithmic – rely on forecasts of outcomes under
+different interventions to inform their choices.  For example, they want to
+choose prices for items based on outcomes under different prices.
 
 The current widely used approach is supervised learning, as seen in the M5
 competition. A benefit of this approach is its scalability. However,
@@ -55,8 +56,8 @@ measure outcomes for interventions not taken.
 
 Another approach uses observational causal inference techniques, as seen in
 prior ACIC competitions. This method measures the difference in outcomes
-between interventions but does not consider the levels of outcomes, which are
-crucial for optimisation tasks.
+between interventions but does not focus on the levels of future outcomes,
+which are crucial for optimisation tasks.
 
 Reinforcement learning offers a theoretical solution to this problem, but its
 practical implementation is hindered by the large, complex state space and
@@ -75,8 +76,8 @@ It's [here](), in the `data/` directory
 
 ## Some details about the data
 
-The data consists of X units, each with 95 time steps. There is an outcome
-variable, a treatment variable consisting of six levels and Y covariates. For
+The data consists of 3908 units, each with 95 time steps. There is an outcome
+variable, a treatment variable consisting of six levels and six covariates. For
 each unit, for each time step, we observe a single outcome and treatment. 
 
 Some details about the data
@@ -96,15 +97,17 @@ There is not full overlap. This means that the probability of some treatment
 levels given a context will be zero. This is by design, extrapolation is part
 of the forecasting game. However, we do satsify SUTVA: one unit's treatment
 only affects that treatment. Also, the treatment in a context has a single,
-specific effect. A treatment at time $t$ only has a direct affect on outcomes
-at any time $j \neq t$.
+specific effect. A treatment at time $t$ only has a indirect affect on
+outcomes at any time $j \neq t$.
 
 Last, we don't provide predictions for covariates during the prediction
 window. Of course, they would help you, but that's not what we're after :) 
 
-Note: This is a simulated data of a dynamic system. We've made effort to
-ensure that the data is fit for purpose. Though you may still find bugs. If
-you find a bug, please submit an issue in this repository. 
+Note: We've made effort to ensure that the data is free of bugs. This is a
+simulated data of a dynamic system. Though you may still find bugs. If you
+find a bug, please submit an issue in this repository or reach out
+[here](https://forms.gle/EAgkSoqruZAS1WDT6). If we do find bugs, we will let
+particpants know.
 
 ## Estimand
 
@@ -126,14 +129,15 @@ ground truth outcome and $\hat{y}$ the predicted outcome, the estimand is
 
 Submissions are of the form
 
-| Unit ID | Time step | Treatment 1       | ... | Treatment 6       |
-| A       | 1         | Outcome(1)_{A, 1} | ... | Outcome(6)_{A, 1} |
-| A       | 2         | Outcome(1)_{A, 2} | ... | Outcome(6)_{A, 2} |
-| ...     | ...       | ...               | ... | ...               |
-| A       | 5         | Outcome(1)_{A, 5} | ... | Outcome(6)_{A, 5} |
-| B       | 1         | Outcome(1)_{B, 1} | ... | Outcome(6)_{B, 1} |
-| ...     | ...       | ...               | ... | ...               |
-| ...     | ...       | ...               | ... | ...               |
+| Unit ID | Time step | Treatment 1       | ...   | Treatment 6       |
+| :---    | :---:     | :---:             | :---: | :---:             |
+| A       | 1         | Outcome(1)_{A, 1} | ...   | Outcome(6)_{A, 1} |
+| A       | 2         | Outcome(1)_{A, 2} | ...   | Outcome(6)_{A, 2} |
+| ...     | ...       | ...               | ...   | ...               |
+| A       | 5         | Outcome(1)_{A, 5} | ...   | Outcome(6)_{A, 5} |
+| B       | 1         | Outcome(1)_{B, 1} | ...   | Outcome(6)_{B, 1} |
+| ...     | ...       | ...               | ...   | ...               |
+| ...     | ...       | ...               | ...   | ...               |
 
 
 You can find an example in the directory `/data/submission`
@@ -154,7 +158,7 @@ or open an issue in this repository.
 
 ## License
 
-The MIT License (MIT) Copyright © [2017] Zalando SE, https://tech.zalando.com
+The MIT License (MIT) Copyright © [2023] Zalando SE, https://tech.zalando.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
